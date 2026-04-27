@@ -1,4 +1,6 @@
 package br.com.cp02.dto;
 
-public class BrinquedoCadastroDTO {
+public record BrinquedoCadastroDTO(
+
+) {
 }
