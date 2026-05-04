@@ -1,5 +1,6 @@
 package br.com.cp02.controller;
 
+import br.com.cp02.dto.BrinquedoAtualizarDTO;
 import br.com.cp02.dto.BrinquedoCadastroDTO;
 import br.com.cp02.dto.BrinquedoListagemDTO;
 import br.com.cp02.service.BrinquedoService;
@@ -21,14 +22,32 @@ public class BrinquedoController {
     }
 
     @PostMapping
-    public ResponseEntity<BrinquedoCadastroDTO> create(@Valid @RequestBody BrinquedoCadastroDTO dto) {
-        BrinquedoCadastroDTO novo = service.createBrinquedo(dto);
+    public ResponseEntity<BrinquedoListagemDTO> create(@Valid @RequestBody BrinquedoCadastroDTO dto) {
+        BrinquedoListagemDTO novo = service.createBrinquedo(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(novo);
     }
 
     @GetMapping
     public ResponseEntity<List<BrinquedoListagemDTO>> read() {
-        List<BrinquedoListagemDTO> brinquedos = service.findAll();
+        List<BrinquedoListagemDTO> brinquedos = service.readAllBrinquedos();
         return ResponseEntity.ok(brinquedos);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<BrinquedoListagemDTO> readById(@PathVariable Long id) {
+        BrinquedoListagemDTO brinquedos = service.readBrinquedoById(id);
+        return ResponseEntity.ok(brinquedos);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<BrinquedoListagemDTO> update(@PathVariable Long id, @RequestBody BrinquedoAtualizarDTO dto) {
+        BrinquedoListagemDTO atualizado = service.updateBrinquedo(id, dto);
+        return ResponseEntity.ok(atualizado);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.deleteBrinquedo(id);
+        return ResponseEntity.noContent().build();
     }
 }
