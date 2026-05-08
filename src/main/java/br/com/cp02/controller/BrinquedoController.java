@@ -40,7 +40,7 @@ public class BrinquedoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BrinquedoListagemDTO> update(@PathVariable Long id, @RequestBody BrinquedoAtualizarDTO dto) {
+    public ResponseEntity<BrinquedoListagemDTO> update(@Valid @PathVariable Long id, @RequestBody BrinquedoAtualizarDTO dto) {
         BrinquedoListagemDTO atualizado = service.updateBrinquedo(id, dto);
         return ResponseEntity.ok(atualizado);
     }
