@@ -21,6 +21,12 @@ A aplicação permite cadastrar, consultar, atualizar e remover brinquedos de um
 
 ---
 
+# Print Spring Initializr
+
+![SpringInitalizr](imagens/Final_config.png)
+
+---
+
 # Estrutura do Projeto
 
 O projeto foi desenvolvido seguindo a arquitetura em camadas:
