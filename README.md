@@ -21,7 +21,7 @@ A aplicação permite cadastrar, consultar, atualizar e remover brinquedos de um
 
 ---
 
-# Print Spring Initializr
+# Configuração Spring Initializr
 
 ![SpringInitalizr](imagens/Final_config.png)
 
