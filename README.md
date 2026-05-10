@@ -90,6 +90,10 @@ POST /brinquedos
 
 ![POST](imagens/Exemplo_Post.png)
 
+### Print do Banco de Dados
+
+![ProvaPOST](imagens/Prova_POST.png)
+
 ---
 
 # READ - Listar Todos os Brinquedos
@@ -111,7 +115,7 @@ GET /brinquedos
 ## Endpoint
 
 ```http
-GET /brinquedos/22
+GET /brinquedos/{id}
 ```
 
 ## Resposta Esperada
@@ -125,7 +129,7 @@ GET /brinquedos/22
 ## Endpoint
 
 ```http
-PUT /brinquedos/22
+PUT /brinquedos/{id}
 ```
 
 ## JSON de Envio
@@ -144,6 +148,9 @@ PUT /brinquedos/22
 
 ![PUT](imagens/Exemplo_Atualizar.png)
 
+### Print do Banco de Dados
+
+![ProvaPUT](imagens/Prova_PUT.png)
 ---
 
 # DELETE - Remover Brinquedo
@@ -151,12 +158,16 @@ PUT /brinquedos/22
 ## Endpoint
 
 ```http
-DELETE /brinquedos/22
+DELETE /brinquedos/{id}
 ```
 
 ## Resposta Esperada
 
 ![DELETE](imagens/Exemplo_Delete.png)
+
+### Print do Banco de Dados
+
+![ProvaDELETE](imagens/Prova_DELETE.png)
 
 ---
 
